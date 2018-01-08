@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Hair.Models.Staff>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateHired)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateTerminated)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReasonForTermination)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsStylist)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HourlyChargeoutRate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HourlySalary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comments)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateHired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTerminated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReasonForTermination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsStylist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HourlyChargeoutRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HourlySalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StaffId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StaffId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StaffId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

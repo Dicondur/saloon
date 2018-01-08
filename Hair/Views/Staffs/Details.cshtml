@@ -1,0 +1,66 @@
+﻿@model Hair.Models.Staff
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Staff</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateHired)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateHired)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTerminated)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateTerminated)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReasonForTermination)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReasonForTermination)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsStylist)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsStylist)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HourlyChargeoutRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HourlyChargeoutRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HourlySalary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HourlySalary)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.StaffId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

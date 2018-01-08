@@ -1,0 +1,81 @@
+﻿@model Hair.Models.Appointment
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AppointmentDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AppointmentDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ScheduledStartTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledStartTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcedureMinutes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProcedureMinutes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ScheduledEndTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledEndTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FinalTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalBeforeTax)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalBeforeTax)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxRate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaxRate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Completed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Completed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Staff.StaffId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="AppointmentId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Hair.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<h2>Appointments</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AppointmentDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ScheduledStartTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProcedureMinutes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ScheduledEndTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FinalTotal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalBeforeTax)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TaxRate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Completed)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledStartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcedureMinutes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledEndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalBeforeTax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaxRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Completed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff.StaffId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AppointmentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AppointmentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AppointmentId">Delete</a> |
+                <a asp-action="Index" asp-controller="AppointmentDetails" asp-route-apptid="@item.AppointmentId">Appointment Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
